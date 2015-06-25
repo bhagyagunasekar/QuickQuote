@@ -1,0 +1,20 @@
+# Initial commands to create the database (from mysql console)
+create database quickquote;
+grant usage on *.* to quickquote identified by 'password';
+grant all privileges on quickquote.* to quickquote;
+
+update user set host=’%’ where user=’root’;
+
+# In order for mysqld to listen on external IP address, modify /etc/mysql/my.cnf:
+
+  bind-addresss  = 0.0.0.0
+
+# then, restart mysql service
+
+
+# Export the database
+mysqldump -u quickquote quickquote -ppassword > quickquote.sql
+
+
+# Import the database
+mysql -u username -ppassword quickquote < quickquote.sql

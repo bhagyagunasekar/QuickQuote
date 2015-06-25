@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!--<property name="hibernate.connection.url">jdbc:mysql://192.168.173.128:3306/quickquote?zeroDateTimeBehavior=convertToNull</property>-->
+    <property name="hibernate.connection.url">jdbc:mysql://mysqldev:3306/quickquote</property>
+    <property name="hibernate.connection.username">qquser</property>
+    <property name="hibernate.connection.password">password</property>
+    
+    <!-- Auto create database -->
+    <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+    
+    <!-- Enable Hibernate's automatic session context management -->
+    <!--<property name="current_session_context_class">thread</property>-->
+
+    <!--<property name="hibernate.cache.use_second_level_cache">false</property>-->
+    <!--<property name="hibernate.cache.use_query_cache">false</property>-->
+    <!--<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>--> 
+    
+    
+    <!-- Persistent classes -->
+    <mapping class="com.servicemesh.devops.demo.quickquote.hibernate.InsuranceType"/>
+    <mapping class="com.servicemesh.devops.demo.quickquote.hibernate.ActionType"/>
+    
+  </session-factory>
+</hibernate-configuration>
